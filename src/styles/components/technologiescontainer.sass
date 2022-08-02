@@ -1,0 +1,55 @@
+@use '../variables'
+@use '../mixins'
+
+.technologies-container
+    margin-bottom: 2rem
+
+    .technologies-grid
+        display: flex
+        flex-wrap: wrap
+        gap: 1.5rem
+
+        .technology-card
+            @include mixins.center
+            justify-content: space-between !important
+            gap: 1rem
+            padding: 1rem
+            border: 1px solid #333
+            width: 47%
+            border-radius: variables.$card-border-radius
+
+            h3
+                color: variables.$text-color
+                margin-bottom: 1rem
+
+img
+    height: 12rem
+    width: 12rem
+    border-radius: 1rem
+
+input
+    padding-left: 2rem
+    font-size: 1.5rem
+    font-family: Helvetica
+    margin-bottom: 2rem
+
+.fields
+    display: flex
+    gap: 1rem
+
+.links
+    color: variables.$gradient
+
+.image
+    height: 10vh
+    position: relative
+
+.image:hover::after, .image.fav::after
+    content: ' \2606'
+    color: blue
+    top: 0
+    left: 8px
+    font-size: 3.2rem
+
+.image.fav:hover::after
+    content: ' \2605'
